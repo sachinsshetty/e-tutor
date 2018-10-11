@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'org.sonarqube'
+//apply plugin: "com.vanniktech.android.junit.jacoco"
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+
+    buildToolsVersion "28.0.2"
+
+    defaultConfig {
+        applicationId "com.proj.quoteforaday"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    useLibrary 'org.apache.http.legacy'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation "junit:junit:$rootProject.junitVersion"
+    testCompile "junit:junit:$rootProject.junitVersion"
+    androidTestCompile "junit:junit:$rootProject.junitVersion"
+    implementation "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    implementation 'de.greenrobot:eventbus:2.4.0'
+    implementation "com.android.support:design:$rootProject.supportLibraryVersion"
+
+
+}
+
+
+sonarqube {
+    properties {
+        def libraries = project.android.sdkDirectory.getPath() + "/platforms/android-27/android.jar"/* + ", build/intermediates/exploded-aar*//**//*classes.jar"*/
+
+        property "sonar.sources", "src/main/java"
+        property "sonar.binaries", "build/intermediates/classes/debug"
+        property "sonar.libraries", libraries
+        property "sonar.tests", "src/test/java, src/androidTest/java"
+     //   property "sonar.java.test.binaries", "build/intermediates/class/debug"
+     //   property "sonar.java.test.libraries", libraries
+
+     //   property "sonar.jacoco.reportPath", "build/jacoco/testDebugUnitTest.exec"
+     //  property "sonar.java.coveragePlugin", "jacoco"
+    //   property "sonar.junit.reportsPath", "build/test-results/debug"
+        property "sonar.android.lint.report", "build/outputs/lint-results"
+
+    }
+
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.proj.quoteforaday" android:versionCode="1"
+	android:versionName="1"
+	android:installLocation="auto">
+
+	<uses-sdk android:minSdkVersion="7" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>  
+	<application android:icon="@drawable/icon"
+		android:label="@string/app_name">
+		<activity android:label="@string/app_name" android:name="com.proj.quoteforaday.HomePage">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:label="Places" android:name="com.proj.quoteforaday.Places" />
+
+
+		<activity android:label="AudioPage" android:name="com.proj.quoteforaday.AudioPage" />
+
+			<activity  android:name="com.proj.quoteforaday.About"  android:label="About"
+			   />
+			<activity android:name="com.proj.quoteforaday.VSlate"/>
+					<activity android:name="com.proj.quoteforaday.Narration"/>
+ <activity android:name="com.proj.quoteforaday.Slate"
+            android:label="@string/app_name" />
+<activity android:name="com.proj.quoteforaday.VirtualSlate"  android:theme="@android:style/Theme" />
+		<activity android:name="com.proj.quoteforaday.StoryWeb" />
+		<activity android:name="com.proj.quoteforaday.Pronounciator"/>
+		
+
+		
+		<activity android:name="com.proj.quoteforaday.EastWeb" />
+
+		<activity android:name="com.proj.quoteforaday.WestWeb" />
+
+		<activity android:name="com.proj.quoteforaday.WebConnect" />
+		
+		<activity android:name="com.proj.quoteforaday.SouthWeb" />
+
+		<activity android:name="com.proj.quoteforaday.WebPlaces" />
+
+		<activity android:name="com.proj.quoteforaday.Info" />
+		<activity android:name="com.proj.quoteforaday.NotificationReciever" />
+		<activity android:name="com.proj.quoteforaday.ScheduleQuote" />
+
+	
+			<activity android:name="com.proj.quoteforaday.Narrator" />
+
+		<activity android:name="com.proj.quoteforaday.South" />
+
+
+		<activity android:name="com.proj.quoteforaday.West" />
+
+		<activity android:name="com.proj.quoteforaday.East" />
+
+		
+		 <receiver android:name="com.proj.quoteforaday.NotificationReciever"/> 
+	</application>
+
+</manifest>
